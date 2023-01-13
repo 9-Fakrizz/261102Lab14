@@ -25,9 +25,6 @@ int main()
 void showImage(const bool image[N][M]){
 
     cout << "------------------------------------------------------------------------\n";
-    /*for(int i = 0; i < N; i++){
-        cout <<"|                                                                      |\n";
-    }*/
 
     for(int i = 0; i < N; i++){
        cout << "|";
@@ -46,5 +43,16 @@ void showImage(const bool image[N][M]){
 
 void updateImage(bool image[N][M],int s,int x,int y){
 
-    
+    double check1;
+
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < M; j++){
+            check1 = sqrt(pow(i-x,2)+ pow(j-y,2));
+            if(check1 <= s-1){
+                image[i][j] = 1;
+            }
+
+        }
+    }
+
 }
